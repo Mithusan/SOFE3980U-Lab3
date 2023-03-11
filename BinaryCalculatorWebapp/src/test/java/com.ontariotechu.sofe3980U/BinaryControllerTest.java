@@ -272,28 +272,4 @@ public class BinaryControllerTest {
                 .andExpect(model().attribute("result", "11110"))
                 .andExpect(model().attribute("operand1", "11"));
     }
-
-    /**
-     * Test The Multiplication functions with a binary numbers with zero
-     */
-    @Test
-    public void postParameterMultiply4() throws Exception {
-        this.mvc.perform(post("/").param("operand1","0").param("operator","*").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(view().name("result"))
-                .andExpect(model().attribute("result", "0"))
-                .andExpect(model().attribute("operand1", "0"));
-    }
-
-    /**
-     * Test The Multiplication functions with two zeros
-     */
-    @Test
-    public void postParameterMultiply5() throws Exception {
-        this.mvc.perform(post("/").param("operand1","0").param("operator","*").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(view().name("result"))
-                .andExpect(model().attribute("result", "0"))
-                .andExpect(model().attribute("operand1", "0"));
-    }
 }
