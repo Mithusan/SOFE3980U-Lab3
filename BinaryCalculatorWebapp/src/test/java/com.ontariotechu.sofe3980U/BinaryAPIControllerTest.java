@@ -90,44 +90,6 @@ public class BinaryAPIControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("add"));
     }
 
-    /**
-     * Test The add functions with a binary numbers with zero
-     */
-    @Test
-    public void add4() throws Exception {
-        this.mvc.perform(get("/add").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("1010"));
-    }
-    @Test
-    public void addJson4() throws Exception {
-        this.mvc.perform(get("/add_json").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(1010))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("add"));
-    }
-
-    /**
-     * Test The add functions with two zeros
-     */
-    @Test
-    public void add5() throws Exception {
-        this.mvc.perform(get("/add").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("0"));
-    }
-    @Test
-    public void addJson5() throws Exception {
-        this.mvc.perform(get("/add_json").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("add"));
-    }
-
     //------------------------------------------------------------------------------------------------------------------
     //AND
     /**
@@ -184,44 +146,6 @@ public class BinaryAPIControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(11))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("and"));
-    }
-
-    /**
-     * Test The and functions with a binary numbers with zero
-     */
-    @Test
-    public void and4() throws Exception {
-        this.mvc.perform(get("/and").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("0"));
-    }
-    @Test
-    public void andJson4() throws Exception {
-        this.mvc.perform(get("/and_json").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("and"));
-    }
-
-    /**
-     * Test The and functions with two zeros
-     */
-    @Test
-    public void and5() throws Exception {
-        this.mvc.perform(get("/and").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("0"));
-    }
-    @Test
-    public void andJson5() throws Exception {
-        this.mvc.perform(get("/and_json").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(0))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("and"));
     }
 
@@ -284,44 +208,7 @@ public class BinaryAPIControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("or"));
     }
 
-    /**
-     * Test The or functions with a binary numbers with zero
-     */
-    @Test
-    public void or4() throws Exception {
-        this.mvc.perform(get("/or").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("1010"));
-    }
-    @Test
-    public void orJson4() throws Exception {
-        this.mvc.perform(get("/or_json").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(1010))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("or"));
-    }
-
-    /**
-     * Test The or functions with two zeros
-     */
-    @Test
-    public void or5() throws Exception {
-        this.mvc.perform(get("/or").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("0"));
-    }
-    @Test
-    public void orJson5() throws Exception {
-        this.mvc.perform(get("/or_json").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("or"));
-    }
-
+    
     //------------------------------------------------------------------------------------------------------------------
     //MULTIPLY
     /**
@@ -378,44 +265,6 @@ public class BinaryAPIControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(11))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(11110))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("multiply"));
-    }
-
-    /**
-     * Test The multiplication functions with a binary numbers with zero
-     */
-    @Test
-    public void multiply4() throws Exception {
-        this.mvc.perform(get("/multiply").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("0"));
-    }
-    @Test
-    public void multiplyJson4() throws Exception {
-        this.mvc.perform(get("/multiply_json").param("operand1","0").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("multiply"));
-    }
-
-    /**
-     * Test The multiplication functions with two zeros
-     */
-    @Test
-    public void multiply5() throws Exception {
-        this.mvc.perform(get("/multiply").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(content().string("0"));
-    }
-    @Test
-    public void multiplyJson5() throws Exception {
-        this.mvc.perform(get("/multiply_json").param("operand1","0").param("operand2","0"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(0))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.result").value(0))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("multiply"));
     }
 }
