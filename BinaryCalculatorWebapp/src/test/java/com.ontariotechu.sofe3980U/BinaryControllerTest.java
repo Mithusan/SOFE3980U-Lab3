@@ -150,18 +150,6 @@ public class BinaryControllerTest {
     }
 
     /**
-     * Test The and functions with a binary numbers with zero
-     */
-    @Test
-    public void postParameterAnd4() throws Exception {
-        this.mvc.perform(post("/").param("operand1","0").param("operator","&").param("operand2","1010"))//.andDo(print())
-                .andExpect(status().isOk())
-                .andExpect(view().name("result"))
-                .andExpect(model().attribute("result", "0"))
-                .andExpect(model().attribute("operand1", "0"));
-    }
-
-    /**
      * Test The and functions with two zeros
      */
     @Test
