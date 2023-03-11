@@ -278,7 +278,7 @@ public class BinaryControllerTest {
      */
     @Test
     public void postParameterMultiply4() throws Exception {
-        this.mvc.perform(post("/").param("operand1","").param("operator","*").param("operand2","1010"))//.andDo(print())
+        this.mvc.perform(post("/").param("operand1","0").param("operator","*").param("operand2","1010"))//.andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("result"))
                 .andExpect(model().attribute("result", "0"))
@@ -290,7 +290,7 @@ public class BinaryControllerTest {
      */
     @Test
     public void postParameterMultiply5() throws Exception {
-        this.mvc.perform(post("/").param("operand1","").param("operator","*").param("operand2",""))//.andDo(print())
+        this.mvc.perform(post("/").param("operand1","0").param("operator","*").param("operand2",""))//.andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("result"))
                 .andExpect(model().attribute("result", "0"))
