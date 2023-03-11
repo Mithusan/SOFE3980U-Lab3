@@ -1,4 +1,4 @@
-# Lab 2: Implementing and Testing Web Application and API Service using Apache Maven and Spring Boot
+# Lab 3: Deploying using Google Kubernetes Engine
 
 ### Group Members
 | Full Name | ID | Email|
